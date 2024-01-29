@@ -1,0 +1,20 @@
+<div class="books show">
+    <h2>Book Details</h2>
+
+    <p>
+        <strong>Title:</strong>
+        <%= @book.title %><br />
+        <strong>Author:</strong>
+        <%= @book.author %><br />
+        <strong>Published:</strong>
+        <%= @book.published_date %><br />
+        <strong>Price:</strong>
+        <%= @book.price %><br />
+    </p>
+
+    <div>
+        <%= link_to("Edit this book", edit_book_path(@book)) %>
+        <%= link_to("Remove this book", delete_book_path(@book)) %>
+        <%= link_to("Back to books", books_path, class: 'back-link') %>
+    </div>
+</div>

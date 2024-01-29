@@ -1,0 +1,49 @@
+<style>
+  table {
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+</style>
+
+<h1>Books</h1>
+
+<p style="color: green"><%= notice %></p>
+
+<div id="books">
+    <% @books.each do |book| %>
+        <table>
+            <tr>
+                <th>Title</th>
+                <td><%= book.title %></td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td><%= book.author %></td>
+            </tr>
+            <tr>
+                <th>Published</th>
+                <td><%= book.published_date %></td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td><%= book.price %></td>
+            </tr>
+        </table>
+
+
+        <div class="actions" style="display: flex;">
+            <%= link_to("Show this book", book_path(book), class: 'action show') %>
+            <div style="width: 10px; display: inline-block;"></div> <!-- Spacer -->
+            <%= link_to("Edit this book", edit_book_path(book), class: 'action edit') %>
+            <div style="width: 10px; display: inline-block;"></div> <!-- Spacer -->
+            <%= link_to("Remove this book", delete_book_path(book), class: 'action delete') %>
+        </div>
+    <% end %>
+</div> <br />
+
+<%= link_to("New book", new_book_path, class: 'action new') %>

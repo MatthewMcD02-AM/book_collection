@@ -1,0 +1,24 @@
+<div class="books new">
+    <h2>Add Book</h2>
+
+    <%= form_for(@book) do |f| %>
+        <p>
+            <strong>Title:</strong>
+            <%= f.text_field(:title) %><br />
+            <strong>Author:</strong>
+            <%= f.text_field(:author) %><br />
+            <strong>Published:</strong>
+            <%= f.date_field(:published_date) %><br />
+            <strong>Price:</strong>
+            <%= f.text_field(:price) %><br />
+        </p>
+
+        <div class="form-buttons">
+            <%= f.submit("Add Book to Collection") %>
+        </div>
+    <% end %>
+
+    <div>
+        <%= link_to("Back to books", books_path, class: 'back-link') %>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="books delete">
+    <h2>Remove Book</h2>
+
+    <%= form_for(@book, method: 'delete') do |f| %>
+
+        <p>Are you sure you want to permanently remove this book?</p>
+
+        <p>
+            <strong>Title:</strong>
+            <%= @book.title %><br />
+            <strong>Author:</strong>
+            <%= @book.author %><br />
+        </p>
+
+        <div class="form-buttons">
+            <%= f.submit("Remove Book From Collection") %>
+        </div>
+
+    <% end %>
+
+
+    <div>
+        <%= link_to("Back to books", books_path, class: 'back-link') %>
+    </div>
+</div>
