@@ -6,4 +6,8 @@ class Book < ApplicationRecord
     validates :publisher, presence: true
     validates :pages, presence: true
     validates :release_date, presence: true
+
+    has_many :user_books
+    has_many :users, through: :user_books
+
 end
